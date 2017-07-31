@@ -1,0 +1,48 @@
+{
+  "0" : {
+    "name" : "Maria Barros",
+    "description" : "Fantasia do Darth Vader",
+    "price" : 125.00,
+    "bankInfo" : {
+      "agencia" : "0695",
+      "agencia_dv" : "5",
+      "bank_code" : "695",
+      "conta" : "58462",
+      "conta_dv" : "597",
+      "document_number" : "75747907360",
+      "legal_name" : "Poor Bank",
+      "type" : "conta_poupanca"
+    }
+  },
+  "1" : {
+    "name" : "João Thiago Samuel Cavalcanti",
+    "description" : "Fantasia do Cafú",
+    "price" : 100.00,
+    "bankInfo" : {
+      "agencia" : "0123",
+      "agencia_dv" : "8",
+      "bank_code" : "341",
+      "conta" : "14785",
+      "conta_dv" : "528",
+      "document_number" : "48761241830",
+      "legal_name" : "Fooking Bank",
+      "type" : "conta_corrente"
+    }
+  },
+  "2" : {
+    "name" : "César Anthony João Martins",
+    "description" : "Mascara de Cavalo",
+    "price" : 150.00,
+    "bankInfo" : {
+      "agencia" : "0357",
+      "agencia_dv" : "1",
+      "bank_code" : "846",
+      "conta" : "68145",
+      "conta_dv" : "785",
+      "document_number" : "84441828420",
+      "legal_name" : "We need your money",
+      "type" : "conta_poupanca_conjunta"
+    }
+
+  }
+}

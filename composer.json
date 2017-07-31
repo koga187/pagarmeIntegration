@@ -1,0 +1,26 @@
+{
+    "name": "koga187/pagarme_marketplace",
+    "description": "Teste de integração com o marketplace pagarme",
+    "minimum-stability": "dev",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Bruno Koga",
+            "email": "brunokoga187@gmail.com"
+        }
+    ],
+    "require" : {
+        "pagarme/pagarme-php" : "~3.3.2",
+        "silex/silex" : "~2.0",
+        "respect/validation" : ">=1.1.12",
+        "twig/twig" : ">=2.4.3",
+        "symfony/twig-bridge": ">=3.3.5",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+
+    "autoload" : {
+        "psr-4" : {
+            "TestPagarme\\" : "src/"
+        }
+    }
+}

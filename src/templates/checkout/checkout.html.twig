@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+    <div class="col-xs-12">
+        <div class="col-xs-12">
+            <h3>Hora da dolorosa!</h3>
+            <p>Confirme abaixo os produtos, endereço de entrega e dados do cartão.</p>
+        </div>
+        <form method="post" enctype="application/x-www-form-urlencoded" name="checkoutShoppingCart" action="{{ url('saveShoppingCart') }}">
+            <div class="col-xs-12">
+                {% for productCode, product in products %}
+                    <div class="product col-xs-12 col-md-6 col-lg-4">
+                        <div class="descricao">
+                            <h3>Descrição</h3>
+                            <p>{{ product.description }}</p>
+                        </div>
+                        <div class="product_data">
+                            <label for="quantidade_{{ productCode }}">Quantidade:</label>
+                            <input type="number" max="5" maxlength="2" class="form-control" name="quantidade[]]" id="quantidade_{{ productCode }}" value="1">
+                            <input type="hidden" max="5" maxlength="2" name="codigo[]]" id="codigo_{{ productCode }}">
+                            <input type="hidden" max="5" maxlength="2" name="valor[]]" id="valor_{{ productCode }}">
+                        </div>
+                        <div class="preco">valor: <label>R$ {{ product.price }}</label></div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-xs-12 total text-right">
+                <label>TOTAL: R$ {{ total }}</label>
+            </div>
+            <div class="col-xs-12 btn-group-lg text-right">
+                <input type="submit" name="finalizaCheckout" id="finalizaCheckout" value="Pagar" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+{% endblock body %}
