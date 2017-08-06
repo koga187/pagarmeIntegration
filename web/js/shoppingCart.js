@@ -1,10 +1,15 @@
 $(document).ready(function() {
+    $body = $('body');
     $('.quantidade_produto_shoppingcart').on('change', function() {
+        $body.loading({
+            message: 'Atualizando valores.'
+        });
+
         idProduto = $(this).data('id');
         quantidadeProduto = $('#quantidade_' + idProduto).val();
         valorProduto      = $('#valor_' + idProduto).val();
         $labelValorFrete        = $('#valor_frete_' + idProduto);
-        valorFrete = $labelValorFrete.text();
+        valorFrete = $labelValorFrete.data('frete');
         $labelTotalProdutoShoppingCart = $('#valor_total_produto_shoppingcart_' + idProduto);
         $labelValorTotalComFrete = $('#valor_total_frete_' + idProduto);
         $labelTotalShoppingCart = $('#total_shoppingcart');
@@ -31,6 +36,8 @@ $(document).ready(function() {
         valorTotalUpdate  = parseFloat(valorTotalComFrete) - parseFloat(valorAnterior);
         totalShoppingCart = parseFloat(valorShoppingCart) + valorTotalUpdate;
 
-        $labelTotalShoppingCart.text(totalShoppingCart);;
+        $labelTotalShoppingCart.text(totalShoppingCart);
+
+        $body.loading('toggle');
     });
 });

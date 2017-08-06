@@ -11,10 +11,10 @@
             <input type="hidden" max="5" maxlength="2" name="valor[{{ productCode }}]" id="valor_{{ productCode }}" value="{{ product.price }}">
         </div>
         <div class="preco">
-            <label>Valor unitárior: R$ {{ product.price }}</label>
+            <label>Valor unitário: R$ {{ product.price }}</label>
             <p>TOTAL:
                 <label id="valor_total_produto_shoppingcart_{{ productCode }}">{{ product.price }}</label>
-                + FRETE <label id="valor_frete_{{ productCode }}">{{ frete }}</label>
+                + FRETE <label id="valor_frete_{{ productCode }}" data-frete="{{ frete }}">{{ frete }}</label>
                 = <label id="valor_total_frete_{{ productCode }}">{{ frete + product.price }}</label>
 
             </p>
