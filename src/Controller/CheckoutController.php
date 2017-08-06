@@ -82,7 +82,7 @@ class CheckoutController
 
             $transaction = Checkout::payment(new PagarmeInfoHandler(), $checkoutEntity, $receivers);
 
-            $app['session']->getFlashBag()->add('success', 'Pagamento efetuado com sucesso!' . $transaction->getId());
+            $app['session']->getFlashBag()->add('success', 'Pagamento efetuado com sucesso! Transação' . $transaction->getId());
         } catch (\Exception $e) {
             if ($e->getCode() == 1) {
                 $app['session']->getFlashBag()->add('warning', $e->getMessage());

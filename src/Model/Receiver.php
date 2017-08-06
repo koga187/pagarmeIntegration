@@ -13,7 +13,7 @@ use TestPagarme\Entity\ReceiverEntity;
 
 class Receiver
 {
-    private static $frete = 42.00;
+    public static $frete = 42.00;
 
     public static function calcPercentFromReceiver(\stdClass $receiverInfo, \stdClass $shoppingCartData): array {
         $receiverAmount = [];

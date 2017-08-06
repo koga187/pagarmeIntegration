@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 use TestPagarme\Entity\ProductEntity;
 use TestPagarme\Entity\ShoppingCartEntity;
 use TestPagarme\Model\Products;
+use TestPagarme\Model\Receiver;
 use TestPagarme\Model\ShoppingCart;
 
 class shoppingCartController
@@ -29,7 +30,8 @@ class shoppingCartController
         unset($products['total']);
         return $app['twig']->render('shoppingCart/shoppingCart.html.twig', [
             'products' => $products,
-            'total' => $total
+            'total' => $total,
+            'frete' => Receiver::$frete
         ]);
     }
 

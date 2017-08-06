@@ -1,1 +1,1 @@
-{"products":[{"id":"0","value":125,"quantity":"1","totalProduct":125},{"id":"1","value":100,"quantity":"1","totalProduct":100},{"id":"2","value":150,"quantity":"1","totalProduct":150}],"totalCart":375}
+{"products":[{"id":"0","value":125,"quantity":"2","totalProduct":250},{"id":"1","value":100,"quantity":"2","totalProduct":200},{"id":"2","value":150,"quantity":"2","totalProduct":300}],"totalCart":750}

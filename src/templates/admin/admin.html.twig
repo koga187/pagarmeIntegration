@@ -3,49 +3,11 @@
     <div class="col-xs-12 row">
         <div class="col-xs-12">
             <h3>1 - Dados utilizados</h3>
-            <p>Caso queira alterar os dados use o padrão abaixo no arquivo "${PROJECT_PATH}/src/dataSource/dadosMarketPlace.json" com a estrutura abaixo:</p>
-            <pre>
-                {
-                    "0": {
-                        "name": "Maria Barros",
-                        "description": "Fantasia do Darth Vader",
-                        "price": 125,
-                        "productOwner": "false",
-                        "bankInfo": {
-                            "agencia": "0695",
-                            "agencia_dv": "5",
-                            "bank_code": "341",
-                            "conta": "58462",
-                            "conta_dv": "5",
-                            "document_number": "75747907360",
-                            "legal_name": "Poor Bank",
-                            "type": "conta_poupanca"
-                        },
-                        "receiverInfo": {
-                            "transfer_enabled": "true",
-                            "transfer_interval": "weekly",
-                            "transfer_day": "3",
-                            "anticipatable_volume_percentage": "80",
-                            "automatic_anticipation_enabled": "true"
-                        }
-                    }
-                }
-            </pre>
-            <p>Os  id da conta bancaria e do recebedor serão preenchidos assim que você clicar nos botões "Criar Contas" e "Criar Recebedores" abaixo</p>
-            <p>Os dados atuais carregados:</p>
         </div>
         {% for bank in bankAccounts %}
             <div class="col-xs-12 col-md-6 col-lg-4">
                 {{ dump(bank) }}
             </div>
         {% endfor %}
-        <div class="btn-group-lg text-right">
-            <form action="{{ url('createBankAccount') }}" method="POST" id="create_bank_account">
-                <input type="submit" class="btn btn-default" value="Criar Contas" />
-            </form>
-            <form action="{{ url('createReceiverAccount') }}" method="POST">
-                <input type="submit" class="btn btn-default" value="Criar Recebedores"  id="create_receiver_account"/>
-            </form>
-        </div>
     </div>
 {% endblock body %}
