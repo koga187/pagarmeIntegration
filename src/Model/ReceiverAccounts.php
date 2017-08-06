@@ -28,8 +28,6 @@ class ReceiverAccounts
             }
         } catch (\Exception $e) {
             throw new \ErrorException('Ocorreu um erro na gravação dos dados do recebedor tente novamente mais tarde', 1, __FILE__, __LINE__);
-        } catch (\ErrorException $e) {
-            throw new \ErrorException('Ocorreu um erro na gravação dos dados do recebedor tente novamente mais tarde: ' . $e->getMessage(), 1, __FILE__, __LINE__);
         }
     }
 

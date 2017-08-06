@@ -8,7 +8,7 @@
       "agencia_dv" : "5",
       "bank_code" : "695",
       "conta" : "58462",
-      "conta_dv" : "597",
+      "conta_dv" : "6",
       "document_number" : "75747907360",
       "legal_name" : "Poor Bank",
       "type" : "conta_poupanca"
@@ -23,7 +23,7 @@
       "agencia_dv" : "8",
       "bank_code" : "341",
       "conta" : "14785",
-      "conta_dv" : "528",
+      "conta_dv" : "3",
       "document_number" : "48761241830",
       "legal_name" : "Fooking Bank",
       "type" : "conta_corrente"
@@ -38,7 +38,7 @@
       "agencia_dv" : "1",
       "bank_code" : "846",
       "conta" : "68145",
-      "conta_dv" : "785",
+      "conta_dv" : "4",
       "document_number" : "84441828420",
       "legal_name" : "We need your money",
       "type" : "conta_poupanca_conjunta"

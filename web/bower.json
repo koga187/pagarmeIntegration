@@ -13,6 +13,8 @@
   "dependencies": {
     "jquery": "^3.2.1",
     "bootstrap": "^3.3.7",
-    "bootbox.js": "bootbox#^4.4.0"
+    "bootbox.js": "bootbox#^4.4.0",
+    "jquery-mask-plugin": "jquery-mask#^1.14.11",
+    "jquery-loading": "^1.2.0"
   }
 }

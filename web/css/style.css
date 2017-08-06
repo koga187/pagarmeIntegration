@@ -1,0 +1,6 @@
+.spin {
+        background: #444;
+}
+.spin > * {
+    background: #EEE;
+}

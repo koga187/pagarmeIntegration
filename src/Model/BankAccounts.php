@@ -22,12 +22,13 @@ class BankAccounts
         try {
 
             foreach ($bankInfo as $infoKey => $infoValue) {
-                $bankInfoPagarme = self::sendBankInfoToPagarme($infoValue, $pagarmeInfoHandler);
+                $bankInfoPagarme = self::sendBankInfoToPagarme($infoValue->bankInfo, $pagarmeInfoHandler);
 
                 DataSource::setResource("$infoKey.bankInfo.id", $bankInfoPagarme->getId());
                 DataSource::setResource("$infoKey.receiverInfo.bank_account_id", $bankInfoPagarme->getId());
             }
         } catch (\Exception $e) {
+            exit('<pre>' . print_r($e, true));
             throw new \ErrorException('Ocorreu um erro na gravação dos dados bancarios tente novamente mais tarde', 1, __FILE__, __LINE__);
         }
     }

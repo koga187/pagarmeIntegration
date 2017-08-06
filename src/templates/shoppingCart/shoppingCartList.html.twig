@@ -1,0 +1,19 @@
+{% for productCode, product in products %}
+    <div class="product col-xs-12 col-md-6 col-lg-4">
+        <div class="descricao">
+            <h3>Descrição</h3>
+            <p>{{ product.description }}</p>
+        </div>
+        <div class="product_data">
+            <label for="quantidade_{{ productCode }}">Quantidade:</label>
+            <input type="number" max="5" maxlength="2" class="form-control quantidade_produto_shoppingcart" name="quantidade[{{ productCode }}]" data-id="{{ productCode }}" id="quantidade_{{ productCode }}" value="1">
+            <input type="hidden" max="5" maxlength="2" name="codigo[{{ productCode }}]" id="codigo_{{ productCode }}" value="{{ productCode }}">
+            <input type="hidden" max="5" maxlength="2" name="valor[{{ productCode }}]" id="valor_{{ productCode }}" value="{{ product.price }}">
+        </div>
+        <div class="preco">
+            <label>Valor unitárior: R$ {{ product.price }}</label>
+            <p>TOTAL: R$
+                <label id="valor_total_produto_shoppingcart_{{ productCode }}">{{ product.price }}</label></p>
+        </div>
+    </div>
+{% endfor %}

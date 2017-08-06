@@ -24,6 +24,7 @@ $app->error(function (\Exception $e, \Symfony\Component\HttpFoundation\Request $
 });
 
 $app->mount('/', new TestPagarme\Router\IndexRouter());
+$app->mount('/shoppingCart', new TestPagarme\Router\ShoppingCartRouter());
 $app->mount('/checkout', new TestPagarme\Router\CheckoutRouter());
 $app->mount('/admin', new TestPagarme\Router\AdminRouter());
 

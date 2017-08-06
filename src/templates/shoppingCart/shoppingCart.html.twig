@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+    <div class="col-xs-12">
+        <div class="col-xs-12">
+            <h3>Confirme os dados do seu carrinho!</h3>
+            <p>Confirme abaixo os produtos.</p>
+        </div>
+        <form method="post" enctype="application/x-www-form-urlencoded" name="shoppingCart" action="{{ url('saveShoppingCart') }}">
+            <div class="col-xs-12">
+                {% include products ? "shoppingCart/shoppingCartList.html.twig" : "shoppingCart/noProducts.html.twig" %}
+            </div>
+            <div class="col-xs-12 total text-right">
+                <label>TOTAL CARRINHO: R$ </label>
+                <label id="total_shoppingcart">{{ total }}</label>
+            </div>
+            <div class="col-xs-12 btn-group-lg text-right">
+                <input type="submit" name="finalizaCheckout" id="finalizaCheckout" value="Checkout" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+{% endblock body %}
+{% block javascript %}
+    <script type="application/javascript" src="{{ url('index') }}js/shoppingCart.js"></script>
+{% endblock javascript %}

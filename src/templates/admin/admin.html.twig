@@ -40,11 +40,11 @@
             </div>
         {% endfor %}
         <div class="btn-group-lg text-right">
-            <form action="{{ url('createBankAccount') }}" method="POST">
+            <form action="{{ url('createBankAccount') }}" method="POST" id="create_bank_account">
                 <input type="submit" class="btn btn-default" value="Criar Contas" />
             </form>
             <form action="{{ url('createReceiverAccount') }}" method="POST">
-                <input type="submit" class="btn btn-default" value="Criar Recebedores" />
+                <input type="submit" class="btn btn-default" value="Criar Recebedores"  id="create_receiver_account"/>
             </form>
         </div>
     </div>

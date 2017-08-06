@@ -20,7 +20,7 @@ class CheckoutRouter implements ControllerProviderInterface
         $routeFactory = $app['controllers_factory'];
 
         $routeFactory->get('/', 'TestPagarme\Controller\CheckoutController::checkoutAction')->bind('checkout');
-        $routeFactory->get('/saveShoppingCart', 'TestPagarme\Controller\CheckoutController::saveShoppingCartAction')->bind('saveShoppingCart');
+        $routeFactory->post('/payment', 'TestPagarme\Controller\CheckoutController::paymentAction')->bind('payment');
 
         return $routeFactory;
     }

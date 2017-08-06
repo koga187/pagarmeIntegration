@@ -1,18 +1,19 @@
 <html>
 <head><title>{% block sub_title '' %}{% block title 'pagarme checkout' %}</title>
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="http://{{ app.request_context.host }}/bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="http://{{ app.request_context.host }}/bower_components/bootstrap/dist/css/bootstrap-theme.css">
-    <link rel="stylesheet" type="text/css" href="http://{{ app.request_context.host }}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('index') }}bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('index') }}bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('index') }}bower_components/jquery-loading/dist/jquery.loading.css">
+    {#<link rel="stylesheet" type="text/css" href="{{ url('index') }}/css/style.css">#}
     {% block stylesheet %}{% endblock stylesheet %}
 </head>
 <body>
 <div id="banner">
     <div>
         <ul class="nav nav-tabs">
-            <li><a class="" href="http://{{ app.request_context.host }}/">Boas Vindas</a></li>
+            <li><a class="" href="{{ url('index') }}">Boas Vindas</a></li>
             <li><a class="" href="{{ url('admin') }}">1 - Admin</a></li>
-            <li><a class="" href="{{ url('checkout') }}">2 - Checkout</a></li>
+            <li><a class="" href="{{ url('shoppingCart') }}">2 - ShoppingCart</a></li>
         </ul>
     </div>
 </div>
@@ -44,8 +45,10 @@
 {% endblock %}
 </body>
 <!-- JavaScripts -->
-<script type="application/javascript" src="http://{{ app.request_context.host }}/bower_components/jquery/dist/jquery.js"></script>
-<script type="application/javascript" src="http://{{ app.request_context.host }}/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script type="application/javascript" src="http://{{ app.request_context.host }}/bower_components/bootbox.js/bootbox.js"></script>
+<script type="application/javascript" src="{{ url('index') }}bower_components/jquery/dist/jquery.js"></script>
+<script type="application/javascript" src="{{ url('index') }}bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script type="application/javascript" src="{{ url('index') }}bower_components/bootbox.js/bootbox.js"></script>
+<script type="application/javascript" src="{{ url('index') }}bower_components/bootbox.js/bootbox.js"></script>
+<script type="application/javascript" src="{{ url('index') }}bower_components/jquery-loading/dist/jquery.loading.js"></script>
 {% block javascript %}{% endblock javascript %}
 </html>

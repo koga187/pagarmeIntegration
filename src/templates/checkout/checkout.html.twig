@@ -5,30 +5,84 @@
             <h3>Hora da dolorosa!</h3>
             <p>Confirme abaixo os produtos, endereço de entrega e dados do cartão.</p>
         </div>
-        <form method="post" enctype="application/x-www-form-urlencoded" name="checkoutShoppingCart" action="{{ url('saveShoppingCart') }}">
+        <form method="post" enctype="application/x-www-form-urlencoded" name="checkoutShoppingCart" action="{{ url('payment') }}">
             <div class="col-xs-12">
-                {% for productCode, product in products %}
-                    <div class="product col-xs-12 col-md-6 col-lg-4">
-                        <div class="descricao">
-                            <h3>Descrição</h3>
-                            <p>{{ product.description }}</p>
+                <div class="form-group">
+                    <div class="row">
+                        <h2>Dados do cliente</h2>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="customer_email">E-mail:</label>
+                            <input class="form-control" name="customer_email" id="customer_email" maxlength="255" placeholder="teste@teste.com">
                         </div>
-                        <div class="product_data">
-                            <label for="quantidade_{{ productCode }}">Quantidade:</label>
-                            <input type="number" max="5" maxlength="2" class="form-control" name="quantidade[]]" id="quantidade_{{ productCode }}" value="1">
-                            <input type="hidden" max="5" maxlength="2" name="codigo[]]" id="codigo_{{ productCode }}">
-                            <input type="hidden" max="5" maxlength="2" name="valor[]]" id="valor_{{ productCode }}">
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="customer_name">Nome:</label>
+                            <input class="form-control" name="customer_name" id="customer_name" maxlength="255"  placeholder="teste da pagarme">
                         </div>
-                        <div class="preco">valor: <label>R$ {{ product.price }}</label></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="customer_document">CPF:</label>
+                            <input class="form-control cpf" name="customer_document" id="customer_document" maxlength="15" placeholder="123.456.789-09">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="customer_phone_number">Telefone:</label>
+                            <input class="form-control phoneNumber" name="customer_phone_number" id="customer_phone_number" maxlength="14" placeholder="(99)99999-9999">
+                        </div>
                     </div>
-                {% endfor %}
-            </div>
-            <div class="col-xs-12 total text-right">
-                <label>TOTAL: R$ {{ total }}</label>
+                    <div class="row">
+                    <h2>Endereço</h2>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="address_zipcode">CEP:</label>
+                            <input class="form-control zipcode" name="address_zipcode" id="address_zipcode" maxlength="9" placeholder="01221-040">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="address_neighborhood">Bairro:</label>
+                            <input class="form-control" name="address_neighborhood" id="address_neighborhood" maxlength="150" placeholder="Bairro">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="address_state">Estado:</label>
+                            <input class="form-control" name="address_state" id="address_state" maxlength="150" placeholder="Nome do estado">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="address_city">Cidade:</label>
+                            <input class="form-control" name="address_city" id="address_city" maxlength="150" placeholder="Nome da cidade">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="address_street">Rua:</label>
+                            <input class="form-control" name="address_street" id="address_street" maxlength="150" placeholder="Nome da rua">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="address_street_number">Numero:</label>
+                            <input class="form-control" name="address_street_number" id="address_street_number" maxlength="5" placeholder="31">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h2>Dados Cartão</h2>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="card_name">Nome cartão:</label>
+                            <input class="form-control" name="card_name" id="card_name" maxlength="150" placeholder="nome do cartão">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label for="card_number">Número cartão:</label>
+                            <input class="form-control cardNumber" name="card_number" id="card_number" maxlength="20" placeholder="9999 9999 9999 9999">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-2">
+                            <label for="card_expire">Vencimento Cartão:</label>
+                            <input class="form-control cardExpireDate" name="card_expire" id="card_expire"  placeholder="02/23">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-2">
+                            <label for="card_cvv">Cvv:</label>
+                            <input class="form-control" name="card_cvv" id="card_cvv" maxlength="3" placeholder="123">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-xs-12 btn-group-lg text-right">
                 <input type="submit" name="finalizaCheckout" id="finalizaCheckout" value="Pagar" class="btn btn-success">
             </div>
         </form>
+        {{ dump(shoppingCart) }}
     </div>
 {% endblock body %}
+{% block javascript %}
+    <script type="application/javascript" src="{{ url('index') }}bower_components/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+    <script type="application/javascript" src="{{ url('index') }}js/checkout.js"></script>
+{% endblock javascript %}
