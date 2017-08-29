@@ -11,9 +11,9 @@ namespace TestPagarme\Helper;
 
 class PagarmeInfoHandler
 {
-    private $apiKey = 'ak_test_DANlRep16K8gCymEJaSK8yuaHrafoQ';
+    private $apiKey = '';
 
-    private $apiEncryption= 'ek_test_stUhVL7AKqyNfVoK56WAJjGQ3ZsyzU';
+    private $apiEncryption= '';
 
     /**
      * @return string
